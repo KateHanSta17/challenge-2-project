@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-/* brand color palette */
+/* brand color palette updated to personal style */
 :root {
   --primary: rgba(68, 88, 119, 1);
   --secondary: rgba(146, 204, 206, 1);
@@ -58,12 +58,23 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
 }
+/* fixed to ensure items are rows not columns. Was not sitting correctly initially */
+nav ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  list-style-type: none; /* Removed bullet points */
+}
 
 nav a {
   text-decoration: none;
   padding: 5px 10px;
   color: var(--secondary);
-  margin-right: 10px;
+  margin-right: 20px; /* Adjusted margin for more space between items in nav */
   background-image: linear-gradient(270deg, var(--secondary) 0%, var(--secondary) 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
@@ -85,10 +96,10 @@ main {
   margin-top: 20px;
   margin-bottom: 45px;
 }
-
+/* added own image to banner */
 .hero-banner {
   background: rgb(68, 88, 120);
-  background-image: url("../images/02-hero-bg.jpg"), linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+  background-image: url("./Images/IMG_8864.jpeg"), linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
   background-size: cover;
   background-position: center;
   background-blend-mode: soft-light;
@@ -121,14 +132,15 @@ main {
   margin-right: auto;
 }
 
+/* switched to wrap and changed to flex start to adjust alignment of paragraph within the divs */
 .page-section {
   margin: 25px 0;
   padding: 10px 0;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .page-section > h2 {
@@ -138,6 +150,20 @@ main {
   border-right: 4px solid var(--primary);
   font-size: 4vw;
   line-height: 1.1;
+}
+
+.title-container {
+  flex: 0 0 20%;
+  text-align: right;
+  padding-right: 15px;
+  border-right: 4px solid var(--primary);
+  font-size: 4vw;
+  line-height: 1.1;
+}
+
+.content-container {
+  flex: 1; /* Added for paragraph styling. Allows the content container to take the remaining space */
+  padding-left: 15px; /* Added padding to create space between the about border and paragraph text */
 }
 
 .page-section > div {
