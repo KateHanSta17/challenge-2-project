@@ -104,7 +104,7 @@ main {
   background-position: center;
   background-blend-mode: soft-light;
   min-height: 30vh;
-  color: var(--light);
+  color: var (--light);
   padding: 2% 6%;
   display: flex;
   justify-content: flex-end;
@@ -177,7 +177,9 @@ main {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 15px;
 }
 
 .flex-item {
@@ -198,6 +200,10 @@ main {
   font-size: 0.9rem;
 }
 
+#bootcamp-challenge-one {
+  background-image:url(./Images/IMG_8067.JPG)
+}
+
 /* feature first portfolio item */
 .flex-item:first-child {
     min-height: 400px;
@@ -215,6 +221,7 @@ main {
 
 .flex-item h3 {
   font-size: 1.6rem;
+  background-color: var(--secondary);
 }
 
 .contact address {
