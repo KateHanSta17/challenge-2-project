@@ -200,6 +200,25 @@ main {
   font-size: 0.9rem;
 }
 
+.flex-item {
+  position: relative; /* Position the container relative to its normal position */
+}
+
+.flex-item img {
+  position: absolute; /* Position the image absolutely within the container */
+  top: 0; /* Position at the top of the container */
+  left: 0; /* Position at the left of the container */
+  width: 100%; /* Take the full width of the container */
+  height: 100%; /* Take the full height of the container */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+}
+
+.flex-item h3,
+.flex-item h4 {
+  position: relative; /* Ensure headings are positioned relative to their container */
+  z-index: 1; /* Ensure headings are above the image */
+}
+
 .flex-item-link {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit text color from parent */
@@ -224,28 +243,50 @@ main {
   background-color: var(--secondary);
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Adjusted to create space between items */
-  padding-left: 15px;
-}
-
-#bootcamp-challenge-one {
-  background-image: url(./Images/IMG_8859.jpeg);
-}
-
 #bootcamp-challenge-one h4 {
   font-weight: 800;
   color: aliceblue;
+  padding-left: 5px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  padding-left: 15px;
+}
+
+.card {
+  flex-basis: calc(33.33% - 1em); /* Adjusted to make one-third of the width with space between them */
+  margin: 0.5em; /* Adjusted margin to create space between them */
+}
+
+.card img {
+  width: 100%; /* Set the width of the image to 100% of its container */
+  height: 100%; /* Set the height of the image to 100% of its container */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
 }
 
 #bootcamp-challenge-two {
   background-image: url(./Images/IMG_8859.jpeg);
 }
 
+#bootcamp-challenge-two h4 {
+  font-weight: 800;
+  color: aliceblue;
+  padding-left: 5px;
+}
+
 #bootcamp-challenge-three {
   background-image: url(./Images/IMG_8859.jpeg);
+  background-size:cover
+}
+
+#bootcamp-challenge-three h4 {
+  font-weight: 800;
+  color: aliceblue;
+  padding-left: 5px;
+  align-self: flex-end;
 }
 
 .contact address {
@@ -276,11 +317,58 @@ main {
   color: var(--secondary);
 }
 
-/* portfolio project images */
-/* TODO: Add portfolio project images here*/
+#resume {
+  position: relative; /* Position the container relative to its normal position */
+}
+
+#resume img {
+  position: absolute; /* Position the image absolutely within the container */
+  top: 0; /* Position at the top of the container */
+  left: 0; /* Position at the left of the container */
+  width: 100%; /* Take the full width of the container */
+  height: 100%; /* Take the full height of the container */
+  object-fit:inherit /* Maintain aspect ratio while covering the container */
+}
+
+#resume h3 {
+  position: relative; /* Ensure headings are positioned relative to their container */
+  z-index: 1; /* Ensure headings are above the image */
+}
+
+#resume-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
+}
 
 /* media queries */
 
-/* TODO: add media query for a max-width of 980px */
+/* media query for a max-width of 980px */
+  @media screen and (max-width: 980px) {
+      /* Adjust header layout for smaller screens */
+   header {
+    flex-direction: column; /* Change flex direction to column for smaller screens */
+    align-items: center; /* Center align items when screen size is reduced */
+   }
+  h1 {
+    margin-bottom: 20px; /* Add spacing between h1 and nav to avoid crowding */
+      }
+  nav {
+    margin-top: 20px; /* Add spacing between h1 and nav to avoid crowding*/
+      }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack nav items into a column when screen size is reduced */
+    align-items: center; /* Center align nav items when screen size is reduced and nav items are stacked into a column*/
+      }
+  nav li {
+    margin-bottom: 8px; /* Add spacing between nav items to avoid crowding on smaller screens */
+      }
+}
 
-/* TODO: add media query for a max-width of 768px */
+/* media query for a max-width of 768px */
+@media screen and (max-width: 768px) {
+
+
+}
