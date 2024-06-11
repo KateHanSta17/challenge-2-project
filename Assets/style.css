@@ -217,6 +217,7 @@ main {
 .flex-item h4 {
   position: relative; /* Ensure headings are positioned relative to their container */
   z-index: 1; /* Ensure headings are above the image */
+  padding: 5px;
 }
 
 .flex-item-link {
@@ -241,6 +242,11 @@ main {
 .flex-item h3 {
   font-size: 1.6rem;
   background-color: var(--secondary);
+}
+
+.flex-item h4 {
+  background-color: lightgray;
+  position:inherit
 }
 
 #bootcamp-challenge-one h4 {
@@ -315,6 +321,35 @@ main {
 .contact address a:hover {
   background-size: 100% 88%;
   color: var(--secondary);
+}
+
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* LinkedIn */
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+/* GitHub */
+.fa-github {
+  background: #000000;
+  color: white;
 }
 
 #resume {
