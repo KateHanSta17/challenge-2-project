@@ -1,5 +1,13 @@
 # 02 Advanced CSS: Portfolio
 
+## GitHub Repo
+https://github.com/KateHanSta17/challenge-2-project
+## GitPages URL
+https://katehansta17.github.io/challenge-2-project/
+
+## Original Repo Location
+https://git.bootcampcontent.com/University-of-Sydney/USYD-VIRT-FSF-PT-05-2024-U-LOLC/-/tree/main/02-Advanced-CSS/02-Challenge/Develop?ref_type=heads
+
 ## Your Task
 
 Welcome to this week's Challenge! This week, you'll build a portfolio page.
