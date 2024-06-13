@@ -295,24 +295,20 @@ main {
   align-self: flex-end;
 }
 
-.contact address {
+.contact-address {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   height: 100%;
+  list-style-type: none;
 }
 
-.contact address a {
-  color: var(--tertiary);
+.contact-address a {
   padding: 5px;
   text-decoration: none;
   font-size: 1.3rem;
   font-style: normal;
-  background-image: linear-gradient(270deg, var(--primary) 0%, var(--primary) 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 0.2em;
-  background-position: bottom;
   transition: all 0.25s ease-in;
   margin: 0 0.2rem 0.1rem;
   display: inline-block;
@@ -349,6 +345,12 @@ main {
 /* GitHub */
 .fa-github {
   background: #000000;
+  color: white;
+}
+
+/* Instagram */
+.fa-instagram {
+  background: #125688;
   color: white;
 }
 
