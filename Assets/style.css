@@ -58,6 +58,7 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 /* fixed to ensure items are rows not columns. Was not sitting correctly initially */
 nav ul {
   display: flex;
@@ -96,6 +97,7 @@ main {
   margin-top: 20px;
   margin-bottom: 45px;
 }
+
 /* added own image to banner */
 .hero-banner {
   background: rgb(68, 88, 120);
@@ -174,14 +176,17 @@ main {
   margin-bottom: 20px;
 }
 
+/* Flex container settings */
 .flex-container {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding-left: 15px;
 }
 
+/* General flex item settings */
 .flex-item {
   border: 5px solid var(--secondary);
   background-color: var(--primary);
@@ -190,6 +195,8 @@ main {
   max-height: 150px;
   flex-basis: calc(50% - 1em); /* Adjusted to make half the width with space between them */
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-end;
   padding: 0 0 20px 0;
   margin: 0.5em 0.25em; /* Adjusted margin to create space between them */
@@ -198,12 +205,24 @@ main {
   background-size: 150%;
   transition: all 0.5s;
   font-size: 0.9rem;
-}
-
-.flex-item {
   position: relative; /* Position the container relative to its normal position */
 }
 
+/* Specific adjustments for the first card */
+.flex-item:first-child {
+  flex: 0 1 100%;
+  /* flex-basis: 100%; /* Make Bootcamp Challenge 1 occupy full width */
+  order: -1; /* Ensure this card is displayed first */
+  min-height: 400px; /* Adjust the minimum height as needed */
+  min-width: 100%;
+}
+
+.flex-item:nth-child(2),
+.flex-item:nth-child(3) {
+  flex-basis: 50%; /* Make the remaining cards take the full width below the first card*/
+}
+
+/* Image within flex item settings */
 .flex-item img {
   position: absolute; /* Position the image absolutely within the container */
   top: 0; /* Position at the top of the container */
@@ -213,6 +232,7 @@ main {
   object-fit: cover; /* Maintain aspect ratio while covering the container */
 }
 
+/* Headings within flex item settings */
 .flex-item h3,
 .flex-item h4 {
   position: relative; /* Ensure headings are positioned relative to their container */
@@ -220,33 +240,33 @@ main {
   padding: 5px;
 }
 
+/* Remove underline from links */
 .flex-item-link {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit text color from parent */
 }
 
-.flex-item:first-child {
-  min-height: 400px;
-  flex-basis: 100%; /* Make Bootcamp Challenge 1 occupy full width */
-}
-
+/* Adjustments on hover */
 .flex-item:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* Background and padding for nested div */
 .flex-item div {
   background-color: var(--secondary);
   padding: 8px 10px;
 }
 
+/* Specific settings for h3 */
 .flex-item h3 {
   font-size: 1.6rem;
   background-color: var(--secondary);
 }
 
+/* Specific settings for h4 */
 .flex-item h4 {
   background-color: lightgray;
-  position:inherit
+  position: inherit;
 }
 
 #bootcamp-challenge-one h4 {
@@ -255,39 +275,27 @@ main {
   padding-left: 5px;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center items horizontally */
-  padding-left: 15px;
-}
-
+/* General card settings */
 .card {
   flex-basis: calc(33.33% - 1em); /* Adjusted to make one-third of the width with space between them */
   margin: 0.5em; /* Adjusted margin to create space between them */
 }
 
+/* Image settings within card */
 .card img {
   width: 100%; /* Set the width of the image to 100% of its container */
   height: 100%; /* Set the height of the image to 100% of its container */
   object-fit: cover; /* Maintain aspect ratio while covering the container */
 }
 
-#bootcamp-challenge-two {
-  background-image: url(./Images/IMG_8859.jpeg);
-}
-
+/* Specific settings for bootcamp-challenge-two */
 #bootcamp-challenge-two h4 {
   font-weight: 800;
   color: aliceblue;
   padding-left: 5px;
 }
 
-#bootcamp-challenge-three {
-  background-image: url(./Images/IMG_8859.jpeg);
-  background-size:cover
-}
-
+/* Specific settings for bootcamp-challenge-three */
 #bootcamp-challenge-three h4 {
   font-weight: 800;
   color: aliceblue;
@@ -319,7 +327,7 @@ main {
   color: var(--secondary);
 }
 
-/* Style all font awesome icons */
+/* Font awesome icons */
 .fa {
   padding: 20px;
   font-size: 30px;
@@ -329,18 +337,16 @@ main {
   border-radius: 20%;
 }
 
-/* Add a hover effect if you want */
+/* Add a hover effect */
 .fa:hover {
   opacity: 0.7;
 }
 
-/* Set a specific color for each brand */
-
 /* LinkedIn */
 .fa-linkedin {
-    background: #007bb5;
-    color: white;
-  }
+  background: #007bb5;
+  color: white;
+}
 
 /* GitHub */
 .fa-github {
@@ -354,6 +360,7 @@ main {
   color: white;
 }
 
+/* Resume section settings */
 #resume {
   position: relative; /* Position the container relative to its normal position */
 }
@@ -364,7 +371,7 @@ main {
   left: 0; /* Position at the left of the container */
   width: 100%; /* Take the full width of the container */
   height: 100%; /* Take the full height of the container */
-  object-fit:inherit /* Maintain aspect ratio while covering the container */
+  object-fit: inherit; /* Maintain aspect ratio while covering the container */
 }
 
 #resume h3 {
@@ -379,33 +386,104 @@ main {
 
 /* media queries */
 
-/* media query for a max-width of 980px */
-  @media screen and (max-width: 980px) {
-      /* Adjust header layout for smaller screens */
-   header {
+/* Media query for max-width of 988px */
+@media screen and (max-width: 988px) {
+  /* Adjust header layout for smaller screens */
+  header {
     flex-direction: column; /* Change flex direction to column for smaller screens */
     align-items: center; /* Center align items when screen size is reduced */
-   }
-  h1 {
+  }
+  header h1 {
     margin-bottom: 20px; /* Add spacing between h1 and nav to avoid crowding */
-      }
+  }
   nav {
-    margin-top: 20px; /* Add spacing between h1 and nav to avoid crowding*/
-      }
+    margin-top: 20px; /* Add spacing between h1 and nav to avoid crowding */
+  }
   nav ul {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column; /* Stack nav items into a column when screen size is reduced */
-    align-items: center; /* Center align nav items when screen size is reduced and nav items are stacked into a column*/
-      }
+    align-items: center; /* Center align nav items when screen size is reduced and nav items are stacked into a column */
+  }
   nav li {
     margin-bottom: 8px; /* Add spacing between nav items to avoid crowding on smaller screens */
-      }
+  }
+
+  /* Adjust layout of work section */
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex-basis: 100%; /* Make each card take the full width */
+    margin: 0.5em 0; /* Adjust margin to create space between cards */
+  }
+
+  .flex-item {
+    min-height: auto;
+    max-height: auto;
+    aspect-ratio: 1 / 1; /* Make the images square */
+  }
+
+  .flex-item:first-child {
+    order: -1; /* Bring the first card to the top */
+  }
+
+  .flex-item:nth-child(2),
+  .flex-item:nth-child(3) {
+    flex-basis: 50%; /* Make the remaining cards split the width */
+  }
 }
 
-/* media query for a max-width of 768px */
+/* Media query for max-width of 768px */
 @media screen and (max-width: 768px) {
+  /* Adjust header layout for smaller screens */
+  header {
+    flex-direction: column; /* Change flex direction to column for smaller screens */
+    align-items: center; /* Center align items when screen size is reduced */
+  }
+  header h1 {
+    margin-bottom: 20px; /* Add spacing between h1 and nav to avoid crowding */
+  }
+  nav {
+    margin-top: 20px; /* Add spacing between h1 and nav to avoid crowding */
+  }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack nav items into a column when screen size is reduced */
+    align-items: center; /* Center align nav items when screen size is reduced and nav items are stacked into a column */
+  }
+  nav li {
+    margin-bottom: 8px; /* Add spacing between nav items to avoid crowding on smaller screens */
+  }
 
+  /* Adjust layout of work section */
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .card {
+    flex-basis: 100%; /* Make each card take the full width */
+    margin: 0.5em 0; /* Adjust margin to create space between cards */
+  }
+
+  .flex-item {
+    min-height: auto;
+    max-height: auto;
+    aspect-ratio: 1 / 1; /* Make the images square */
+  }
+
+  .flex-item:first-child {
+    order: -1; /* Bring the first card to the top */
+  }
+
+  .flex-item:nth-child(2),
+  .flex-item:nth-child(3) {
+    flex-basis: 100%; /* Make the remaining cards take the full width */
+  }
 }
